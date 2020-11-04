@@ -1,0 +1,28 @@
+<nav>
+  <div class="container-flex">
+    <h1 class="logo">AnimeSpace</h1>
+
+    <div class="menu" [ngClass]="menu ? 'active' : 'inactive'">
+      <ul>
+        <li><a routerLink="/main" routerLinkActive="active">Inicio</a></li>
+        <li>
+          <a
+            routerLink="/anime"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Mis Animes</a
+          >
+        </li>
+        <li>
+          <a routerLink="/anime/add" routerLinkActive="active">Agregar</a>
+        </li>
+        <li><a routerLink="/about" routerLinkActive="active">Acerca De</a></li>
+        <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="hamburger" (click)="menuActive()">
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>

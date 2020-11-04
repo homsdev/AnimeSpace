@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+/* You can add global styles to this file, and also import other style files */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+        Colors
+============================ */
+:root {
+  /* --main:#888da7; */
+  --main: #2d5356;
+  --nav: #2d5356;
+  --font: #eff3f4;
+  --font-hover: #9ae19d;
+  --shadows: #65a9ae;
+  --shadows-rgba: rgba(101, 169, 174, 0.6);
+  --card-bg: #7da397;
+}
+
+/* =========================
+            Fonts
+============================ */
+
+html {
+  font-family: "Architects Daughter", cursive;
+  color: var(--font);
+}
+
+/* =========================
+            General
+============================ */
+
+body {
+  background: url("./assets/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* =========================
+      Media  Queries
+============================ */
+
+@media (min-width: 640px) {
+  body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}

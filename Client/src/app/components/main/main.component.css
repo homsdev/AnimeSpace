@@ -1,0 +1,35 @@
+h1 {
+  color: var(--font);
+}
+
+h1 span {
+  font-size: 0.3em;
+}
+
+/* =====================
+        Layout 
+========================*/
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+h1 span {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  top: 3.9rem;
+  left: 0;
+}

@@ -1,0 +1,37 @@
+<div class="anime-card">
+  <div class="card-header">
+    <h4>{{ anime.name == "" ? "Titulo" : anime.name }}</h4>
+    <div class="options">
+      <a class="btn edit" (click)="update()"><i class="fas fa-edit"></i></a>
+      <a class="btn delete" (click)="delete()"
+        ><i class="fas fa-trash-alt"></i
+      ></a>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="cover">
+      <img [src]="anime.cover == '' ? img : anime.cover" alt="" />
+    </div>
+    <div class="stats">
+      <div class="rate">
+        <i [class.marked]="anime.rate >= 1" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 2" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 3" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 4" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 5" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 6" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 7" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 8" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 9" class="fas fa-star"></i>
+        <i [class.marked]="anime.rate >= 9.5" class="fas fa-star"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <span>{{ anime.studio }}</span>
+    <span>{{ anime.season }}</span>
+    <span>{{ anime.first_emision | date }}</span>
+  </div>
+</div>

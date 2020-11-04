@@ -1,0 +1,29 @@
+<app-pagination
+  (searchAnime)="search($event)"
+  (changePage)="changePage($event)"
+  (changeStep)="changeStep($event)"
+  [totalItems]="totalAnimes"
+></app-pagination>
+<div [ngClass]="!loaded ? 'display' : 'hidden'" class="lds-default">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="anime-container">
+  <app-anime-item
+    class="anime-item"
+    (updateAnime)="updateAnime(anime)"
+    (deleteAnime)="deleteAnime(anime)"
+    [anime]="anime"
+    *ngFor="let anime of animeList"
+  ></app-anime-item>
+</div>

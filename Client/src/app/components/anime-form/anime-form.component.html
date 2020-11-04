@@ -1,0 +1,140 @@
+<div class="form-container">
+  <div class="form-anime">
+    <form
+      #animeForm="ngForm"
+      (submit)="editable ? updateAnime() : createAnime()"
+    >
+      <h2>Registra un nuevo Anime</h2>
+      <div class="form-control" [class.danger]="name.invalid && name.touched">
+        <input
+          type="text"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="anime.name"
+          required
+          autocomplete="off"
+        />
+        <label>
+          <span>Titulo</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="name.untouched || name.valid"
+        class="invalid-feedback"
+        >Debe proporcionarse un titulo</small
+      >
+
+      <div
+        class="form-control"
+        [class.danger]="studio.invalid && studio.touched"
+      >
+        <input
+          type="text"
+          name="studio"
+          #studio="ngModel"
+          [(ngModel)]="anime.studio"
+          required
+        />
+        <label>
+          <span>Estudio</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="studio.untouched || studio.valid"
+        class="invalid-feedback"
+        >Debe proporcionarse un estudio</small
+      >
+
+      <div
+        class="form-control"
+        [class.danger]="season.invalid && season.touched"
+      >
+        <input
+          type="text"
+          name="season"
+          #season="ngModel"
+          [(ngModel)]="anime.season"
+          required
+        />
+        <label>
+          <span>Temporada</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="season.untouched || season.valid"
+        class="invalid-feedback"
+        >Debe proporcionarse una temporada</small
+      >
+
+      <div class="form-control" [class.danger]="cover.invalid && cover.touched">
+        <input
+          type="url"
+          name="cover"
+          #cover="ngModel"
+          [(ngModel)]="anime.cover"
+          required
+        />
+        <label>
+          <span>Portada</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="cover.untouched || cover.valid"
+        class="invalid-feedback"
+        >Debe proporcionar una url para la imagen</small
+      >
+
+      <div class="form-control" [class.danger]="rate.invalid && rate.touched">
+        <input
+          type="number"
+          min="0"
+          max="10"
+          step="1"
+          name="rate"
+          #rate="ngModel"
+          [(ngModel)]="anime.rate"
+          required
+        />
+        <label>
+          <span>Puntuación</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="rate.untouched || rate.valid"
+        class="invalid-feedback"
+        >Debe proporcionar una calificación</small
+      >
+
+      <div
+        class="form-control"
+        [class.danger]="emision.invalid && emision.touched"
+      >
+        <input
+          type="date"
+          name="first_emision"
+          #emision="ngModel"
+          [(ngModel)]="anime.first_emision"
+          required
+        />
+        <label>
+          <span>Emisión</span>
+        </label>
+      </div>
+      <small
+        [class.d-none]="emision.untouched || emision.valid"
+        class="invalid-feedback"
+        >Seleccione una fecha</small
+      >
+
+      <div class="form-footer">
+        <button [disabled]="animeForm.form.invalid" type="submit" class="btn">
+          Agregar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="preview-container">
+    <app-anime-item [anime]="anime"></app-anime-item>
+  </div>
+</div>

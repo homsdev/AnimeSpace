@@ -1,0 +1,29 @@
+<div class="paginator">
+  <p>Mostrar</p>
+  <select name="" id="" (click)="changeItemsPerPage($event)">
+    <option disabled selected>animes</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="25">25</option>
+  </select>
+  <p>por página</p>
+  <p class="items">{{ startItems }}-{{ endItems }} de {{ totalItems }}</p>
+  <div class="controls">
+    <button
+      [disabled]="startItems == 0"
+      class="pageSelector"
+      (click)="pageBack()"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button
+      [disabled]="endItems > totalItems"
+      class="pageSelector"
+      (click)="pagePass()"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  <p>buscar:</p>
+  <input class="input-search-anime" (keyup)="searchBox($event)" type="text" />
+</div>
